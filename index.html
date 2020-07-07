@@ -3,21 +3,60 @@
     <head>
         <title>Meu Portifólio Web</title>
         <meta charset="utf-8">
+        <style>
+            h1{
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                color:rgb(29, 28, 28);
+                padding:3px 15px;
+                font-size: 30px;  
+                
+            }
+            h3{ 
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                color:rgb(182, 189, 201);
+                background-color: rgb(29, 63, 83);
+                padding:3px 15px;
+                font-weight: 10px;  
+                
+            }
+            body {
+                background-color:#c4cad8;
+            }
+            .picture {
+                border-radius: 50%;
+                border: 5px solid gray;
+            }
+            .button {
+                background-color: rgb(1, 39, 61);
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+                color:rgb(250, 251, 253);
+                padding: 10px 10px;
+                text-decoration: none;
+                font-weight: 10px;   
+                border: 2px solid gray;   
+
+            }
+            p {
+                font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
+            }
+        </style>
     </head>
     <body>
-        <h2>Mário Duarte da Costa</h2>
+        <h1>Mário Duarte da Costa  <img src="foguete.png" width=20px></h1>
         <h3>Portifólio Web</h3>
-        <img src="eu.png" alt="Foto frontal de Mário Duarte" width="300">
-        <h3>Índice</h3>
-        <a href="#info">Informações Pessoais</a><br>
-        <a href="#habilidades">Minhas Habilidades</a><br>
-        <a href="#link">Links úteis</a><br><br><br><br>
+        <img class="picture" src="eu.png" alt="Foto frontal de Mário Duarte" width="330">
+        <h3>Índice</h3><br>
+        <a class="button" href="#info">Informações Pessoais</a>
+        <a class="button" href="#habilidades">Minhas Habilidades</a>
+        <a class="button" href="#link">Links úteis</a><br><br><br><br>
         <p><h3 id="info">Informações pessoais:</h3> 
             Engenheiro de Produção<br>
             32 anos, <strong> Brasileiro </strong> <br>
             Natural da Cidade do <strong>Rio de Janeiro / RJ</strong> <br>
             Estudante da Trybe | Futuro desenvolvedor de software
-        <p><br>
+        </p><br>
         <h3 id="habilidades">Habilidades:</h3>
         <ul>
             <li>Auto-didata, Pró-Ativo e Pontual</li>
@@ -27,10 +66,10 @@
         <br><br>
         <h3 id="link">Links Úteis:</h3>
         <p>
-        Veja a foto em destaque aqui: <br>
-        <a href="eu.png" target="_blank">Mário Duarte Foto</a><br>   
-        Blog indicado: <br>
-        <a href="https://www.treinaweb.com.br/blog/tag/css/" target="_blank">Blog do TreinaWEB</a>
+        <strong>Veja a foto em destaque aqui -- </strong> <a href="eu.png" target="_blank"><img src="img.png" alt="Ícone máquina fotográfica" width="40px"></a> <br>
+        <br>   
+        <strong>Blog indicado: </strong>
+        <a href="https://www.treinaweb.com.br/blog/tag/css/" target="_blank"><img src="blog.png" alt="Ícone blog" width="40px"></a>
         </p>
     </body>
 </html>

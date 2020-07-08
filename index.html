@@ -3,72 +3,30 @@
     <head>
         <title>Meu Portfólio Web</title>
         <meta charset="utf-8">
-        <style>
-            h1{
-                font-family:Verdana, Geneva, Tahoma, sans-serif;
-                color:rgb(29, 28, 28);
-                padding:3px 15px;
-                font-size: 30px;
-                display: inline-block;  
-                
-            }
-            h3{ 
-                font-family:Verdana, Geneva, Tahoma, sans-serif;
-                color:rgb(182, 189, 201);
-                background-color: rgb(29, 63, 83);
-                padding:3px 15px;
-                font-weight: 10px;  
-                
-            }
-            body {
-                background-color:#c4cad8;
-            }
-            .picture {
-                border-radius: 50%;
-                border: 5px solid gray;
-            }
-            .button {
-                background-color: rgb(1, 39, 61);
-                font-family:Verdana, Geneva, Tahoma, sans-serif;
-                color:rgb(250, 251, 253);
-                padding: 10px 10px;
-                text-decoration: none;
-                font-weight: 10px;   
-                border: 2px solid gray;   
-
-            }
-            .button:hover {
-                background-color: rgb(44, 98, 151);
-
-            }
-            p {
-                font-family:Verdana, Geneva, Tahoma, sans-serif;
-                font-weight: 10px; 
-
-
-            }
-            ul{
-                font-family:Verdana, Geneva, Tahoma, sans-serif;
-                font-weight: 10px; 
-            }
-            em {
-                font-size: 16px;
-            }
-   
-        </style>
+        <link rel="stylesheet" type="text/css" href="style.css"
     </head>
     <body>
-        <center><a href="english.html"> For English Version, Please Click Here</a></center>
-        <h3>Portfólio Web</h3>
+        <div class="cabecalho">        
+            <a class="button" href="#info">Informações Pessoais</a>
+            <a class="button" href="#habilidades">Minhas Habilidades</a>
+            <a class="button" href="#link">Links úteis</a>
+            <a class="button" href="english.html"> English Version</a>
+        </div>
         
-        <img class="picture" src="eu.png" alt="Foto frontal de Mário Duarte" width="330">
-        <h1>Mário Duarte da Costa  <img src="foguete.png" width=40px></h1>
-        
-        
-        <h3>Índice</h3><br>
-        <a class="button" href="#info">Informações Pessoais</a>
-        <a class="button" href="#habilidades">Minhas Habilidades</a>
-        <a class="button" href="#link">Links úteis</a><br><br><br><br>
+        <div class="first">
+            <div class="foto">
+                <img class="picture" src="eu.png" alt="Foto frontal de Mário Duarte" width="400">
+            </div>
+            <div class="information">
+                
+                <h1>Prazer,<br> me chamo <br><span class="chamo">Mário</span> Duarte.<br></h1><h1 class="menor">Sou Estudante Trybe! <img src="foguete.png" width=40px></h1> 
+                
+                <p class="frase">"Sou apaixonado por programação, estudar e adquirir novas experiências é meu lema. Passar por esse aprendizado incrível de Desenvolvimento Full Stack tem sido a melhor experiência da minha vida"</p>
+                
+            </div>
+        </div>
+
+
         <h3 id="info">Informações pessoais:</h3> 
         <p>
             Engenheiro de Produção<br>
@@ -81,7 +39,8 @@
             Linkedin: <a href="https://www.linkedin.com/in/m%C3%A1rio-duarte-82815816a/" target="_blank">Mário Duarte</a>
             
             
-        </p><br>
+        </p>
+
         <h3 id="habilidades">Habilidades:</h3>
         <ul>
             <li>Auto-didata, Pró-Ativo e Pontual</li>

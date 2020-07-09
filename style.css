@@ -176,14 +176,14 @@ em {
 }
 .contato{
     position: fixed;
-    top: 300px;
+    top: 65px;
     right: 0px;
     background-color: rgb(112, 128, 144, 0.9);
     color: white;
     padding: 7px;
     line-height: 20px;
     text-align: right;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 0px 0px 0px 10px;
     font-family: Montserrat, sans-serif;
     font-size: 14px;
 }

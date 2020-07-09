@@ -12,11 +12,6 @@ h1{
     font-color: white;
 
 }
-h3{ 
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color:rgb(21, 68, 151);
-    
-}
 body {
     background-color:#c4cad8;
     margin: 0px;
@@ -178,4 +173,18 @@ em {
     height: 600px;
     background-color: #c4cad8;
     width:100%;
+}
+.contato{
+    position: fixed;
+    bottom: 250px;
+    right: 0px;
+    background-color: rgb(112, 128, 144, 0.9);
+    color: white;
+    padding: 10px;
+    line-height: 25px;
+    text-align: right;
+    border-radius: 10px 0px 0px 10px;
+    max-width: 150px;
+
+
 }

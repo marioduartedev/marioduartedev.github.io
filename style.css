@@ -14,20 +14,19 @@ h1{
 }
 h3{ 
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    color:rgb(182, 189, 201);
-    background-color: rgb(29, 63, 83);
-    padding:3px 15px;
-    font-weight: 10px;  
+    color:rgb(21, 68, 151);
     
 }
 body {
     background-color:#c4cad8;
     margin: 0px;
+    
 }
 .picture {
     padding: 5px;
     background-color: gray;
     border-radius: 50%;
+
 
     
 }
@@ -52,17 +51,23 @@ body {
 
 }
 p {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 10px; 
+    font-family: Montserrat, sans-serif;
+    font-size: 22px;
+    line-height: 42px;
+    font-weight: 300;
+    color: rgb(29, 63, 83);
+    margin-left: 30px;
+    
 
 
 }
+
 ul{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 10px; 
 }
 em {
-    font-size: 16px;
+    font-size: 22px;
 }
 
 .foto{
@@ -81,6 +86,7 @@ em {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 3;
     
 
 
@@ -88,10 +94,12 @@ em {
 
 .first{
     margin-top: 90px;
+    max-width: 100%;
 }
 
 .information{
     padding: 35px;
+    
 }
 
 .frase {
@@ -105,6 +113,8 @@ em {
 .chamo{
     background-color: rgb(29, 63, 83);
     color:white;
+    padding-left: 5px;
+    padding-right: 5px;
 
 }
 .botoes{
@@ -120,4 +130,52 @@ em {
     background-color: rgb(238, 237, 237);
     border-radius: 20%;
     
+}
+.sobre{
+    background-color: rgb(173, 184, 241);
+    height: 217px;
+    margin-top: 0px;
+   
+    padding-top: 120px;
+}
+
+.text{
+    
+    margin: auto;
+    width: 85%;
+    background-color: rgb(226, 226, 228);
+
+
+
+    box-shadow: 5px 5px 0 rgb(177, 175, 175, 0.8);
+    -webkit-box-shadow: 5px 5px 0 rgb(177, 175, 175, 0.8);
+    -moz-box-shadow: 5px 5px 0 rgb(177, 175, 175, 0.8);
+    text-align: center;
+    padding-top: 5px;
+}
+.text2{
+    
+    margin: auto;
+    background-color: rgb(250, 241, 208);
+    
+
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+
+    box-shadow: 5px 5px 0 rgb(177, 175, 175, 0.8);
+    -webkit-box-shadow: 5px 5px 0 rgb(177, 175, 175, 0.8);
+    -moz-box-shadow: 5px 5px 0 rgb(177, 175, 175, 0.8);
+    text-align: center;
+}
+
+.habilidades{
+    height: 600px;
+}
+
+.total{
+    height: 600px;
+    background-color: #c4cad8;
+    width:100%;
 }

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.4</title>
+    <script>
+        window.onload = function() {
+            document.body.style.backgroundColor = localStorage.getItem("cor");
+            document.querySelector('p').style.color = localStorage.getItem("corTexto");
+            document.querySelector('p').style.fontSize = localStorage.getItem("tamanhoTexto");
+            document.querySelector('p').style.lineHeight = localStorage.getItem("espacamentoTexto");
+            document.querySelector('p').style.fontFamily = localStorage.getItem("tipoTexto");
+            function changeColor(event) {
+                document.body.style.backgroundColor = event.target.id;
+                console.log(event.target.id);
+                localStorage.setItem("cor", event.target.id,)
+            }
+            const blue = document.querySelector('#blue');
+            blue.addEventListener('click', changeColor)
+
+            const green = document.querySelector('#green');
+            green.addEventListener('click', changeColor)
+
+            const yellow = document.querySelector('#yellow');
+            yellow.addEventListener('click', changeColor)
+
+            const red = document.querySelector('#red');
+            red.addEventListener('click', changeColor)
+
+            const black = document.querySelector('#black');
+            black.addEventListener('click', changeColor)
+
+            const corTexto = document.querySelector('#cor-texto');
+            corTexto.addEventListener('keyup', function() {
+                document.querySelector('p').style.color = corTexto.value;
+                localStorage.setItem("corTexto", corTexto.value);
+            })
+
+            const tamanhoTexto = document.querySelector('#tamanho-texto');
+            tamanhoTexto.addEventListener('keyup', function() {
+                document.querySelector('p').style.fontSize = tamanhoTexto.value + "px";
+                localStorage.setItem("tamanhoTexto", tamanhoTexto.value + "px");
+            })
+            const espacamentoTexto = document.querySelector('#espacamento-texto');
+            espacamentoTexto.addEventListener('keyup', function() {
+                document.querySelector('p').style.lineHeight = espacamentoTexto.value + "px";
+                localStorage.setItem("espacamentoTexto", espacamentoTexto.value + "px");
+            })
+            const tipoTexto = document.querySelector('#tipo-texto');
+            tipoTexto.addEventListener('input', function() {
+                document.querySelector('p').style.fontFamily = "" + tipoTexto.value;
+                localStorage.setItem("tipoTexto", tipoTexto.value);
+            })
+
+
+            
+        }
+    </script>
+    <style>
+        body {
+            background-color:black;
+            color: white;
+        }
+        p {
+            color:burlywood;
+            font-size: 22px;
+            line-height: 30px;
+            text-align: justify;
+            margin: 20px;
+        }
+        .cor {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            border-width: 3px;
+            border-color: white;
+            border-style: solid;
+        }
+        #blue {
+            background-color: blue;
+        }
+        #green {
+            background-color: green;
+        }
+        #yellow{
+            background-color:yellow;
+        }
+        #red {
+            background-color:red;
+        }
+        #black {
+            background-color:black;
+        }
+        .titulo {
+            font-size: 16px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            display: inline-block;
+            width: 20%;
+            margin: 10px;
+        }
+        #direita {
+            float: right;
+            text-align: center;
+        }
+        #esquerda {
+            float: left;
+        }
+        #textao {
+            clear: both;
+        }
+    </style>
+  </head>
+  <body>
+    <center><h1>Faça você mesmo</h1></center>
+    <div id="esquerda">
+    <div> Escolha uma cor de fundo: <br><br> 
+        <div id="blue" class="cor"></div>
+        <div id="green" class="cor"></div>
+        <div id="yellow" class="cor"></div>
+        <div id="red" class="cor"></div>
+        <div id="black" class="cor"></div>
+    </div> 
+    </div>
+    <div id="direita">
+    <div class ="titulo"> Digite a cor do texto em inglês:<br> <br><input id="cor-texto" type="text"/> </div>
+    <div class ="titulo"> Digite o tamanho da fonte:<br><br>  <input id="tamanho-texto" type="text"/> </div>
+    <div class ="titulo"> Digite o espaçamento entre as linhas:<br><br>  <input id="espacamento-texto" type="text"/> </div>
+    <div class ="titulo"> Digite o tipo da fonte:<br><br>  <input id="tipo-texto" type="text"/> </div>
+    </div>
+    <div id="textao">
+    <p> <br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+        Why do we use it?
+        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+        
+        </p>
+    </div>
+        
+  </body>
+</html>

@@ -3,14 +3,26 @@
     <head>
         <title>Meu Portfólio Web</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="style.css"
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) { 
+                $(".scroll").click(function(event){        
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop:$(this.hash).offset().top}, 1200);
+                });
+            });
+        </script>
         <div class="cabecalho">   
-            <div class="botoes">  
-                <a class="button" href="#info">Sobre mim</a>
+            <div class="botoes"> 
+                <a class="scroll button" href="#home">Home</a> 
+                <a class="scroll button" href="#info">Sobre mim</a>
                 <a class="button" href="english.html"> English Version</a>
+                <a class="button" href="./projeto-facebook/index.html" target="_blank"> Projeto Facebook</a>
+                <a id="projects" class="button" href="./projeto-web/index.html" target="_blank"> Projeto Tryber</a>
+
             </div>  
             <div class="contato"> 
                
@@ -26,11 +38,10 @@
 
             </div>
         </div>
-        
-        <div class="first">
+        <div class="first" id="home">
             
             <div class="foto">
-                <img class="picture" src="eu.png" alt="Foto frontal de Mário Duarte" width="400">
+                <img class="picture" src="eu.png" alt="Foto frontal de Mário Duarte" width="350">
             </div>
             <div class="information">
                  

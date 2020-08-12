@@ -1,83 +1,77 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Meu Portfólio Web</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-        <script type="text/javascript">
-            jQuery(document).ready(function($) { 
-                $(".scroll").click(function(event){        
-                    event.preventDefault();
-                    $('html,body').animate({scrollTop:$(this.hash).offset().top}, 1200);
-                });
-            });
-        </script>
-        <div class="cabecalho">   
-            <div class="botoes"> 
-                <a class="scroll button" href="#home">Home</a> 
-                <a class="scroll button" href="#info">Sobre mim</a>
-                <a class="button" href="english.html"> English Version</a>
-                <a class="button" href="./projeto-facebook/index.html" target="_blank"> Projeto Facebook</a>
-                <a id="projects" class="button" href="./projeto-web/index.html" target="_blank"> Projeto Tryber</a>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+	<title>Mario Duarte Portfolio Web</title>
+</head>
+<body>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1200);
+			});
+		});
+	</script>
+	<header>
+		<nav>
+			<a class="scroll button" href="#home">Home</a>
+			<a class="scroll button" href="#info">Sobre mim</a>
+			<a class="button" href="english.html"> English Version</a>
+			<a class="button" href="./projeto-facebook/index.html" target="_blank"> Projeto Facebook</a>
+			<a id="projects" class="button" href="./projeto-web/index.html" target="_blank"> Projeto Tryber</a>
+		</nav>
+		<div class="icons">
+			<div class="contact">
+				<p>marioduarte.engenheiro@gmail.com <br>
+					<a target="_blank" class="phone" href="https://api.whatsapp.com/send?phone=+5521980838490"><span class="ddd">+55 (21)</span> 98083-8490</a> 
+				</p>		
+			</div>
+			<a target="_blank" href="https://www.linkedin.com/in/m%C3%A1rio-duarte-82815816a/" alt="Linkedin">
+				<img class="logo" src="linkedin.png" alt="ícone linkedin" height="30px">
+			</a>
+			<a target="_blank" href="https://github.com/marioduartedev" alt="Github">
+				<img class="logo" src="github.png" alt="ícone github" height="30px">
+			</a>
+		</div>
+	</header>
+	<div class="first" id="home">
+		<img class="picture" src="eu.png" alt="Foto frontal de Mário Duarte">
+		<div class="information">
+			<h1>Prazer,</h1><h1>me chamo </h1><h1><span class="name">Mário Duarte</span></h1>
+			<h2>Sou Estudante Trybe! <img src="foguete.png" width=40px></h2>
+		</div>
+	</div>
+	<p class="frase">"Sou apaixonado por programação e desenvolvimento de software.
+		<br> Passar por esse aprendizado incrível de Desenvolvimento Full Stack tem sido a melhor experiência da minha
+		vida"</p>
+	<div class="total" id="info">
+		<div class="sobre">
+			<div class="text">
+				<p class="history">
+					Brasileiro, natural da Cidade do <strong><span class="name"> Rio de Janeiro / RJ </span></strong> <br>
+					Bacharel em Engenharia de Produção <br> pela Universidade IBMEC <br>
+					Futuro <span class="name"><strong> Desenvolvedor Full Stack </strong></span><br>
 
-            </div>  
-            <div class="contato"> 
-               
-                marioduarte.engenheiro@gmail.com <br><span class="tel"><a target="_blank" href="https://api.whatsapp.com/send?phone=+5521980838490"> +55 (21) 98083-8490</a> </span>
-            </div>
-            <div class="icones">
- 
-                
-                <a target="_blank" href="https://www.linkedin.com/in/m%C3%A1rio-duarte-82815816a/" alt="Linkedin">
-                <img class="logo" src="linkedin.png" alt="ícone linkedin" height="30px"></a>
-                <a target="_blank" href="https://github.com/marioduartedev" alt="Github">
-                <img class="logo" src="github.png" alt="ícone github" height="30px"></a> <br>
 
-            </div>
-        </div>
-        <div class="first" id="home">
-            
-            <div class="foto">
-                <img class="picture" src="eu.png" alt="Foto frontal de Mário Duarte" width="350">
-            </div>
-            <div class="information">
-                 
-                
-                <h1>Prazer,<br> me chamo <br><span class="chamo">Mário</span> Duarte.<br></h1><h1 class="menor">Sou Estudante Trybe! <img src="foguete.png" width=40px></h1> 
-                
-                <p class="frase">"Sou apaixonado por programação. Esforço na vida profissional é meu lema.
-                    <br> Passar por esse aprendizado incrível de Desenvolvimento Full Stack tem sido a melhor experiência da minha vida"</p>
-                 
-            </div>
-            
-        </div>
-        <div class="total" id="info">
+				</p>
+				<div class="text2">
+					<p class="history">
+						<span class="name"><strong>Experiência</strong></span> anterior<br>
+						Gerente de Marketing de vendas<em> com 8 anos de expertise.</em><br>
+						Domínio de ferramentas de projeto <br>
+						<span class="name"><strong>Power BI, VBA e MS Project</strong></span>
+					</p>
+				</div>
+			</div>
 
-            <div class="sobre" >
-                <div class="text">
-                    <p>
-                        Brasileiro, natural da Cidade do <strong><span class="chamo"> Rio de Janeiro / RJ </span></strong> <br>
-                        Bacharel em Engenharia de Produção <br> pela Universidade IBMEC <br>
-                        Futuro <span class="chamo"><strong> Desenvolvedor Full Stack </strong></span><br>
+		</div>
+	</div>
+	<center>@ 2020 Mario Duarte, Todos os direitos reservados</center> <br>
 
-                        
-                    </p>
-                    <div class="text2">
-                        <p>
-                        <span class="chamo"><strong>Experiência</strong></span> anterior<br>
-                        Gerente de Marketing de vendas<em> com 8 anos de expertise.</em><br>
-                        Domínio de ferramentas de projeto <br>
-                        <span class="chamo"><strong>Power BI, VBA e MS Project</strong></span>
-                        </p>
-                    </div>  
-                </div>  
-        
-            </div>
-        </div>
-        <center>@ 2020 Mario Duarte, Todos os direitos reservados</center> <br>
-        
-    </body>
+</body>
+
 </html>

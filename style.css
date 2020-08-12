@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(rgb(174, 191, 223), white);
+    background-color:   #c4cad8;
     margin: 0px;
     font-family: Montserrat, sans-serif;
     overflow-x: hidden;
@@ -218,5 +218,24 @@ h2 {
     }
     .right {
         align-items: center;
+        width: 100%;
+    }
+    nav {
+        display: none;
+    }
+    h2 {
+        font-size: 35px;
+        width: 100%;
+    }
+    .frase {
+        display: none;
+    }
+    .history {
+        text-align: center;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    center {
+        display: none;
     }
 }

@@ -23,7 +23,7 @@ Depois de saber a importância de um evento para uma aplicação web, é necess�
 
 #### Criando um evento
 Imagine que ao carregar uma página por completo seja necessário emitir um alerta ao usuário: *"Página carregada por completo"*. Em JavaScript, o objeto window representa a janela do navegador e onload representa o carregamento da página. Veja abaixo como é possível emitir a mensagem de alerta:
-```javascript
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -71,45 +71,46 @@ keyup | ao ser liberada qualquer tecla do teclado que estava pressionada
 Acesse este [link](https://www.w3schools.com/jsref/dom_obj_event.asp) para conhecer outros eventos que podem ser utilizados.
 
 Copie o código abaixo, cole no VS Code e salve como .html. Após salvar, visualize no seu navegador a página e veja o resultado desse código. Nesse momento, não se preocupe com o código CSS na tag <style>, foque na parte do HTML e JavaScript para entender melhor o addEventListener. 
-```HTML
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-	<meta charset="UTF-8" />
-	<title>Mudando o texto na caixa</title>
-  <style>
-    body {
-      width: 80%;
-      margin: auto;
-      font-size: 30px;
-    }
-    .textBox {
-      align-items: center;
-      border: 1px solid black;
-      display: flex; 
-      height: 150px;
-      margin-top: 20px;
-      padding: 10px;
-      width: 700px;
-    }
-  </style>
-</head>
-<body>
-  Digite seu texto aqui:
-  <input id="text" type="text" size="50">
-  <br>
-  <div class="textBox" id="textBox">Seu Texto aparecerá aqui!!!
-  </div>
-  <script>
-    const text = document.querySelector('#text');
-    text.addEventListener('change', writeText);
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mudando o texto na caixa</title>
+    <style>
+      body {
+        width: 80%;
+        margin: auto;
+        font-size: 30px;
+      }
 
-    function writeText() {
-      const box = document.querySelector('.textBox');
-      box.innerHTML = text.value;
-    }
-  </script>
-</body>
+      .textBox {
+        align-items: center;
+        border: 1px solid black;
+        display: flex;
+        height: 150px;
+        margin-top: 20px;
+        padding: 10px;
+        width: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    Digite seu texto aqui:
+    <input id="text" type="text" size="50">
+    <br>
+    <div class="textBox" id="textBox">Seu Texto aparecerá aqui!!!
+    </div>
+    <script>
+      const text = document.querySelector('#text');
+      text.addEventListener('keyup', writeText);
+
+      function writeText() {
+        const box = document.querySelector('.textBox');
+        box.innerHTML = text.value;
+      }
+    </script>
+  </body>
 </html>
 ```
 Dentro da tag <script>, é possível entender que o elemento com o id "text" é selecionado e a ele adicionado um addEventListener. O evento utilizado é o evento 'change', esse evento ocorre quando um elemento de um formulário é modificado. Observe que para o texto aparecer na caixa embaixo, é necessário que se clique fora da caixa de texto após a sua digitação. Isso ocorre pois o evento 'change' acontece com a mudança de estado desse elemento. Para entender melhor, substitua o evento 'change' por 'keyup'. Percebeu a diferença?
@@ -117,52 +118,53 @@ Dentro da tag <script>, é possível entender que o elemento com o id "text" é 
 **Como segundo parâmetro do addEventListener é necessário passar uma função**, neste caso, é a função writeText criada. Nessa função, é selecionada a div de classe "textBox" e através do innerHTML é inserido o texto digitado na caixa de texto dentro da div.
 
 Visualize agora este novo código e tente entender a sua funcionalidade. Mais uma vez, se concentre na parte em HTML e JavaScript. O CSS da tag <style> está apenas auxiliando para que a visualização no navegador seja mais agradável. Preste atenção na estilização com CSS inline colocada dentro da tag div, sua funcionalidade é colorir cada quadrado. Copie, cole todo o código abaixo no VS Code e abra no seu navegador. 
-```HTML
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-	<meta charset="UTF-8" />
-	<title>Mudando a cor de fundo</title>
-  <style>
-    .color {
-      cursor: pointer;
-      height: 100px;
-      margin: 20px;
-      width: 100px;
-    }
-    .container {
-      background-color: rgb(219, 218, 218);
-      border-radius: 10px;
-      height: 400px;
-      padding: 10px;
-      width: 140px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <center>Mude as cores do fundo da página:</center>
-    <div class="color" id="blue" style="background-color: blue;"></div>
-    <div class="color" id="red" style="background-color: red;"></div>
-    <div class="color" id="green" style="background-color: green;"></div>
-  </div>
-  <script>
-    const divBlue = document.querySelector('#blue');
-    divBlue.addEventListener('click', changeColorBlue);
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mudando a cor de fundo</title>
+    <style>
+      .color {
+        cursor: pointer;
+        height: 100px;
+        margin: 20px;
+        width: 100px;
+      }
 
-    const divRed = document.querySelector('#red');
-    divRed.addEventListener('mouseover', changeColorRed);
+      .container {
+        background-color: rgb(219 , 218 , 218);
+        border-radius: 10px;
+        height: 400px;
+        padding: 10px;
+        width: 140px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <center>Mude as cores do fundo da página:</center>
+      <div class="color" id="blue" style="background-color: blue;"></div>
+      <div class="color" id="red" style="background-color: red;"></div>
+      <div class="color" id="green" style="background-color: green;"></div>
+    </div>
+    <script>
+      const divBlue = document.querySelector('#blue');
+      divBlue.addEventListener('click', changeColorToBlue);
 
-    function changeColorToBlue() {
-      const bodyPage = document.body;
-      bodyPage.style.backgroundColor = 'blue';
-    }
-    function changeColorToRed() {
-      const bodyPage = document.body;
-      bodyPage.style.backgroundColor = 'red';
-    }
-  </script>
-</body>
+      const divRed = document.querySelector('#red');
+      divRed.addEventListener('mouseover', changeColorToRed);
+
+      function changeColorToBlue() {
+        const bodyPage = document.body;
+        bodyPage.style.backgroundColor = 'blue';
+      }
+      function changeColorToRed() {
+        const bodyPage = document.body;
+        bodyPage.style.backgroundColor = 'red';
+      }
+    </script>
+  </body>
 </html>
 ``` 
 Como pode notar, cada função muda a cor de fundo da página para uma determinada cor. Essas funções são chamadas de acordo com o evento que é passado no escutador de eventos, 'click' para mudar o fundo da página para cor azul ao clicar na div de fundo azul e 'mouseover' para mudar para vermelho. Agora, crie uma nova função changeColorToGreen e depois atribua a div verde, já criada, um evento de duplo clique que chame a função.
@@ -176,92 +178,140 @@ Tempo sugerido para realização: 120 minutos
 
 Agora é o momento de praticar a utilização dos eventos em JavaScript. Você criará eventos em botões e divs, além de criar funções que serão chamadas na ocorrência destes eventos.
 Para realizar os exercicíos do 1 ao 5, você utilizará o código abaixo.
-``` HTML
+``` html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<title>Ficha Cadastral</title>
-  <style>
-    .form {
-      width: 550px;
-    }
-    .buttons {
-      display: flex;
-      justify-content: center;
-    }
-    .super-box {
-      display: flex;
-      justify-content: center;
-      margin: 0px;
-    }
-    button {
-      margin: 10px;
-    }
-    .registration {
-      align-items: center;
-      border: solid 1px black;
-      display: flex;
-      flex-direction: column;
-      height: 360px;
-      width: 550px;
-    }
-    .box {
-      align-items: center;
-      background-color: rgb(228, 226, 226);
-      border: solid 1px black;
-      border-radius: 10px;
-      cursor: pointer;
-      display: flex;
-      height: 50px;
-      justify-content: center;
-      margin: 10px;
-      width: 50px;
-    }
-  </style>
-</head>
-<body>
-  <div class="form">
-    <fieldset id="field">
-      <div class="line">
-        <label for="name">Nome Completo:</label>
-        <input name="name" id="name" type="text" size="60" required>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Ficha Cadastral</title>
+    <style>
+      .form {
+        width: 550px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+      }
+
+      .super-box {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+      }
+
+      button {
+        margin: 10px;
+      }
+
+      .registration {
+        align-items: center;
+        border: solid 1px black;
+        display: flex;
+        flex-direction: column;
+        height: 360px;
+        width: 550px;
+      }
+
+      .box {
+        align-items: center;
+        background-color: rgb(228 , 226 , 226);
+        border: solid 1px black;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        height: 50px;
+        justify-content: center;
+        margin: 10px;
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <fieldset id="field">
+        <div class="line">
+          <label for="name">Nome Completo:</label>
+          <input name="name" id="name" type="text" size="60" required>
+        </div>
+        <div class="line">
+          <label for="email">Email:</label>
+          <input name="email" id="email" type="text" size="60" required>
+        </div>
+        <div class="line">
+          <label for="adress">Endereço:</label>
+          <input name="adress" id="adress" type="text" size="60" required>
+        </div>
+        <div class="line">
+          <label for="city">Cidade:</label>
+          <input name="city" id="city" type="text" size="60" required>
+        </div>
+      </fieldset>
+      <div class="buttons">
+        <button id="submit">Criar Ficha</button>
+        <button id="reset">Limpar</button>
+        <div class="box" id="blue" style="background-color: blue;"></div>
+        <div class="box" id="red" style="background-color: red;"></div>
+        <div class="box" id="green" style="background-color: green;"></div>
+        <div class="box" id="size-20">20px</div>
+        <div class="box" id="size-24">24px</div>
+        <div class="box" id="size-28">28px</div>
       </div>
-      <div class="line">
-        <label for="email">Email:</label>
-        <input name="email" id="email" type="text" size="60" required>
-      </div>
-      <div class="line">
-        <label for="adress">Endereço:</label>
-        <input name="adress" id="adress" type="text" size="60" required>
-      </div>
-      <div class="line">
-        <label for="city">Cidade:</label>
-        <input name="city" id="city" type="text" size="60" required>
-      </div>
-    </fieldset>
-    <div class="buttons">
-      <button id="submit">Criar Ficha</button>
-      <button id="reset">Limpar</button>
-      <div class="box" id="blue" style="background-color: blue;"></div>
-      <div class="box" id="red" style="background-color: red;"></div>
-      <div class="box" id="green" style="background-color: green;"></div>
-      <div class="box" id="size-20">20px</div>
-      <div class="box" id="size-24">24px</div>
-      <div class="box" id="size-28">28px</div>
     </div>
-  </div>
-  <div class="registration">
-    <h1> Ficha Cadastral </h1>
-    <div class="form-response" style="font-size: 18px;">
+    <div class="registration">
+      <h1> Ficha Cadastral </h1>
+      <div class="form-response" style="font-size: 18px;">
+      </div>
     </div>
-  </div>
-  <script>
-  // seu código aqui
-  </script>
-</body>
+    <script>
+      window.onload = function() {
+        alert('Crie sua ficha cadastral');
+      }
+      const formResponse = document.querySelector('.form-response');
+      function submitForm() {
+        const name = document.querySelector('#name').value;
+        const email = document.querySelector('#email').value;
+        const adress = document.querySelector('#adress').value;
+        const city = document.querySelector('#city').value;
+        formResponse.innerHTML =
+          `<br>Nome: ${name} <br> Email: ${email} <br> Endereço: ${adress} <br> Cidade: ${city}`;
+      }
+      function changeColor() {
+        const colorSelection = event.target.style.backgroundColor;
+        formResponse.style.color = colorSelection;
+      }
+      function changeSize() {
+        const sizeSelection = event.target;
+        formResponse.style.fontSize = sizeSelection.innerHTML;
+      }
+      function resetForm() {
+        formResponse.innerHTML = "";
+      }
+      const buttonSubmit = document.querySelector('#submit');
+      buttonSubmit.addEventListener('click', submitForm);
+
+      const buttonReset = document.querySelector('#reset');
+      buttonReset.addEventListener('click', resetForm);
+
+      const boxBlue = document.querySelector('#blue');
+      boxBlue.addEventListener('mouseover', changeColor);
+      const boxRed = document.querySelector('#red');
+      boxRed.addEventListener('mouseover', changeColor);
+      const boxGreen = document.querySelector('#green');
+      boxGreen.addEventListener('mouseover', changeColor);
+
+      const sizeSmall = document.querySelector('#size-20');
+      sizeSmall.addEventListener('dblclick', changeSize);
+      const sizeMedium = document.querySelector('#size-24');
+      sizeMedium.addEventListener('dblclick', changeSize);
+      const sizeBig= document.querySelector('#size-28');
+      sizeBig.addEventListener('dblclick', changeSize);
+
+
+    </script>
+  </body>
 </html>
 ``` 
 Leia atentamente os enunciados. Dentro da tag <script>, faça o que se pede! 

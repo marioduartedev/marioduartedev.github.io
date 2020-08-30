@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<title>Mudando a cor de fundo</title>
+  <style>
+    .color {
+      cursor: pointer;
+      height: 100px;
+      margin: 20px;
+      width: 100px;
+    }
+    .container {
+      background-color: rgb(219, 218, 218);
+      border-radius: 10px;
+      height: 400px;
+      padding: 10px;
+      width: 140px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <center>Mude as cores do fundo da página:</center>
+    <div class="color" id="blue" style="background-color: blue;"></div>
+    <div class="color" id="red" style="background-color: red;"></div>
+    <div class="color" id="green" style="background-color: green;"></div>
+  </div>
+  <script>
+    const divBlue = document.querySelector('#blue');
+    divBlue.addEventListener('click', changeColorToBlue);
+
+    const divRed = document.querySelector('#red');
+    divRed.addEventListener('mouseover', changeColorToRed);
+
+    function changeColorToBlue() {
+      const bodyPage = document.body;
+      bodyPage.style.backgroundColor = 'blue';
+    }
+    function changeColorToRed() {
+      const bodyPage = document.body;
+      bodyPage.style.backgroundColor = 'red';
+    }
+  </script>
+</body>
+</html>

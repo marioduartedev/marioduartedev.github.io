@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Ficha Cadastral</title>
+  <style>
+    .form {
+      width: 550px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+    }
+    .super-box {
+      display: flex;
+      justify-content: center;
+      margin: 0px;
+    }
+    button {
+      margin: 10px;
+    }
+    .registration {
+      align-items: center;
+      border: solid 1px black;
+      display: flex;
+      flex-direction: column;
+      height: 360px;
+      width: 550px;
+    }
+    .box {
+      align-items: center;
+      background-color: rgb(228, 226, 226);
+      border: solid 1px black;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      height: 50px;
+      justify-content: center;
+      margin: 10px;
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form">
+    <fieldset id="field">
+      <div class="line">
+        <label for="name">Nome Completo:</label>
+        <input name="name" id="name" type="text" size="60" required>
+      </div>
+      <div class="line">
+        <label for="email">Email:</label>
+        <input name="email" id="email" type="text" size="60" required>
+      </div>
+      <div class="line">
+        <label for="adress">Endereço:</label>
+        <input name="adress" id="adress" type="text" size="60" required>
+      </div>
+      <div class="line">
+        <label for="city">Cidade:</label>
+        <input name="city" id="city" type="text" size="60" required>
+      </div>
+    </fieldset>
+    <div class="buttons">
+      <button id="submit">Criar Ficha</button>
+      <button id="reset">Limpar</button>
+      <div class="box" id="blue" style="background-color: blue;"></div>
+      <div class="box" id="red" style="background-color: red;"></div>
+      <div class="box" id="green" style="background-color: green;"></div>
+      <div class="box" id="size-20">20px</div>
+      <div class="box" id="size-24">24px</div>
+      <div class="box" id="size-28">28px</div>
+    </div>
+  </div>
+  <div class="registration">
+    <h1> Ficha Cadastral </h1>
+    <div class="form-response" style="font-size: 18px;">
+    </div>
+  </div>
+  <script>
+    window.onload = function() {
+      alert('Crie sua ficha cadastral');
+    }
+    const formResponse = document.querySelector('.form-response');
+    function submitForm() {
+      const name = document.querySelector('#name').value;
+      const email = document.querySelector('#email').value;
+      const adress = document.querySelector('#adress').value;
+      const city = document.querySelector('#city').value;
+      formResponse.innerHTML = 
+        `<br>Nome: ${name} <br> Email: ${email} <br> Endereço: ${adress} <br> Cidade: ${city}`;
+    }
+    function changeColor() {
+      const colorSelection = event.target.style.backgroundColor;
+      formResponse.style.color = colorSelection;
+    }
+    function changeSize() {
+      const sizeSelection = event.target;
+      formResponse.style.fontSize = sizeSelection.innerHTML;
+    }
+    function resetForm() {
+      formResponse.innerHTML = "";
+    }
+    const buttonSubmit = document.querySelector('#submit');
+    buttonSubmit.addEventListener('click', submitForm);
+
+    const buttonReset = document.querySelector('#reset');
+    buttonReset.addEventListener('click', resetForm);
+
+    const boxBlue = document.querySelector('#blue');
+    boxBlue.addEventListener('mouseover', changeColor);
+    const boxRed = document.querySelector('#red');
+    boxRed.addEventListener('mouseover', changeColor);
+    const boxGreen = document.querySelector('#green');
+    boxGreen.addEventListener('mouseover', changeColor);
+
+    const sizeSmall = document.querySelector('#size-20');
+    sizeSmall.addEventListener('dblclick', changeSize);
+    const sizeMedium = document.querySelector('#size-24');
+    sizeMedium.addEventListener('dblclick', changeSize);
+    const sizeBig= document.querySelector('#size-28');
+    sizeBig.addEventListener('dblclick', changeSize);
+
+
+  </script>
+</body>
+</html>

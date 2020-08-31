@@ -29,12 +29,11 @@
     </div>
     <script>
       const text = document.querySelector('#text');
-      text.addEventListener('keyup', writeText);
-
       function writeText() {
         const box = document.querySelector('.textBox');
         box.innerHTML = text.value;
       }
+      text.addEventListener('keyup', writeText);
     </script>
   </body>
 </html>

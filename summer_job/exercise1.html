@@ -84,51 +84,9 @@
       <div class="form-response" style="font-size: 18px;">
       </div>
     </div>
+    <script src="gabarito.js"></script>
     <script>
-      window.onload = function() {
-        alert('Crie sua ficha cadastral');
-      }
-      const formResponse = document.querySelector('.form-response');
-      function submitForm() {
-        const name = document.querySelector('#name').value;
-        const email = document.querySelector('#email').value;
-        const adress = document.querySelector('#adress').value;
-        const city = document.querySelector('#city').value;
-        formResponse.innerHTML =
-          `<br>Nome: ${name} <br> Email: ${email} <br> Endereço: ${adress} <br> Cidade: ${city}`;
-      }
-      function changeColor() {
-        const colorSelection = event.target.style.backgroundColor;
-        formResponse.style.color = colorSelection;
-      }
-      function changeSize() {
-        const sizeSelection = event.target;
-        formResponse.style.fontSize = sizeSelection.innerHTML;
-      }
-      function resetForm() {
-        formResponse.innerHTML = "";
-      }
-      const buttonSubmit = document.querySelector('#submit');
-      buttonSubmit.addEventListener('click', submitForm);
-
-      const buttonReset = document.querySelector('#reset');
-      buttonReset.addEventListener('click', resetForm);
-
-      const boxBlue = document.querySelector('#blue');
-      boxBlue.addEventListener('mouseover', changeColor);
-      const boxRed = document.querySelector('#red');
-      boxRed.addEventListener('mouseover', changeColor);
-      const boxGreen = document.querySelector('#green');
-      boxGreen.addEventListener('mouseover', changeColor);
-
-      const sizeSmall = document.querySelector('#size-20');
-      sizeSmall.addEventListener('dblclick', changeSize);
-      const sizeMedium = document.querySelector('#size-24');
-      sizeMedium.addEventListener('dblclick', changeSize);
-      const sizeBig= document.querySelector('#size-28');
-      sizeBig.addEventListener('dblclick', changeSize);
-
-
+      // seu código aqui!
     </script>
   </body>
 </html>

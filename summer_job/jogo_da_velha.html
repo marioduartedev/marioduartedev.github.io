@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jogo da Velha</title>
+    <style>
+      body {
+        margin: auto;
+        width: 450px;
+      }
+
+      .box {
+        align-items: center;
+        border: solid 1px black;
+        display: flex;
+        justify-content: center;
+        height: 150px;
+        width: 150px;
+      }
+
+      .line {
+        display: flex;
+        flex-direction: row;
+        width: 450px;
+      }
+
+      .circle {
+        border: solid 10px blue;
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+      }
+
+      .cross {
+        color: red;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 180px;
+        padding-bottom: 30px;
+      }
+
+      button {
+        margin: 15px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game">
+      <div class="line">
+        <div class="box" style="border-left-width: 0;
+          border-top-width: 0;"></div>
+        <div class="box" style="border-top-width: 0;"></div>
+        <div class="box" style="border-right-width: 0;
+          border-top-width: 0;"></div>
+      </div>
+      <div class="line">
+        <div class="box" style="border-left-width: 0;"></div>
+        <div class="box"></div>
+        <div class="box" style="border-right-width: 0;"></div>
+      </div>
+      <div class="line">
+        <div class="box" style="border-left-width: 0;
+          border-bottom-width: 0;"></div>
+        <div class="box" style="border-bottom-width: 0;"></div>
+        <div class="box" style="border-right-width: 0;
+          border-bottom-width: 0;"></div>
+      </div>
+    </div>
+    <div class="line">
+      Escolha como começar:
+      <button id="circle">Círculo</button>
+      <button id="cross">X (Xis)</button>
+    </div>
+    <script src="gabarito.js"></script>
+    <script>
+      //seu código aqui!
+    </script>
+  </body>
+</html>

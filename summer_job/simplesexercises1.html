@@ -28,12 +28,6 @@
       <div class="color" id="green" style="background-color: green;"></div>
     </div>
     <script>
-      const divBlue = document.querySelector('#blue');
-      divBlue.addEventListener('click', changeColorToBlue);
-
-      const divRed = document.querySelector('#red');
-      divRed.addEventListener('mouseover', changeColorToRed);
-
       function changeColorToBlue() {
         const bodyPage = document.body;
         bodyPage.style.backgroundColor = 'blue';
@@ -42,6 +36,12 @@
         const bodyPage = document.body;
         bodyPage.style.backgroundColor = 'red';
       }
+
+      const divBlue = document.querySelector('#blue');
+      divBlue.addEventListener('click', changeColorToBlue);
+
+      const divRed = document.querySelector('#red');
+      divRed.addEventListener('mouseover', changeColorToRed);
     </script>
   </body>
 </html>

@@ -10,7 +10,7 @@ Eventos são ações que podem ocorrer dentro da nossa página web quando o nave
 * Interagir com a janela do navegador através do objeto window.
 
 ### Por que isso é importante?
-Os eventos em JavaScript tornam as aplicações web mais interessantes, pois permitem uma interação com o usuário. A cada clique do mouse ou tecla pressionada, uma resposta pode ser dada de forma dinâmica. Essa resposta é importante pois ajuda na comunicação, bem como deixa seu aplicativo ou página muito mais atrativo para quem está utlizando. Como bom desenvolvedor, tem algo mais emocionante do que deixar sua aplicação mais atrativa e dinâmica? Então, segue para o conteúdo que essa aula promete!
+Os eventos em JavaScript tornam as aplicações web mais interessantes, pois permitem uma interação com o usuário. A cada clique do mouse ou tecla pressionada, uma resposta pode ser dada de forma dinâmica. Essa resposta é importante pois ajuda na comunicação, bem como deixa seu aplicativo ou página muito mais atrativo para quem está utlizando. Como bom desenvolvedor, tem algo mais emocionante do que deixar sua aplicação mais atrativa e dinâmica? Então, segue para o conteúdo que essa aula promete! :smile:
 
 ## Conteúdos
 Tempo sugerido para realização: 60 minutos
@@ -37,11 +37,13 @@ Imagine que ao carregar uma página por completo seja necessário emitir um aler
     </script>
   </body>
 </html>
+
 ```
 Copie e cole esse código no vs code e salve como uma página *.html* ao carregar a página será exibido uma mensagem de alerta ao usuário.
 
 Assim como onload é um evento que ocorre na janela, existem outros tipos de eventos, que podem ocorrer em um determinado elemento na página, como: **click, change e mouseOver**.
 Agora, perceba como a interatividade acontece em um evento **click** no elemento botão, observe as seguintes etapas:
+![Evento JS](https://i.ibb.co/DMVPVP2/image-summer-job.jpg)
 1. O botão é **clicado**.
 2. O botão dispara um sinal: *"Um evento está ocorrendo"*.
 3. Algum código está **escutando** o evento disparado.
@@ -103,15 +105,15 @@ Copie o código abaixo, cole no VS Code e salve como .html. Após salvar, visual
     </div>
     <script>
       const text = document.querySelector('#text');
-      text.addEventListener('keyup', writeText);
-
       function writeText() {
         const box = document.querySelector('.textBox');
         box.innerHTML = text.value;
       }
+      text.addEventListener('keyup', writeText);
     </script>
   </body>
 </html>
+
 ```
 Dentro da tag <script>, é possível entender que o elemento com o id "text" é selecionado e a ele adicionado um addEventListener. O evento utilizado é o evento 'change', esse evento ocorre quando um elemento de um formulário é modificado. Observe que para o texto aparecer na caixa embaixo, é necessário que se clique fora da caixa de texto após a sua digitação. Isso ocorre pois o evento 'change' acontece com a mudança de estado desse elemento. Para entender melhor, substitua o evento 'change' por 'keyup'. Percebeu a diferença?
 
@@ -149,12 +151,6 @@ Visualize agora este novo código e tente entender a sua funcionalidade. Mais um
       <div class="color" id="green" style="background-color: green;"></div>
     </div>
     <script>
-      const divBlue = document.querySelector('#blue');
-      divBlue.addEventListener('click', changeColorToBlue);
-
-      const divRed = document.querySelector('#red');
-      divRed.addEventListener('mouseover', changeColorToRed);
-
       function changeColorToBlue() {
         const bodyPage = document.body;
         bodyPage.style.backgroundColor = 'blue';
@@ -163,11 +159,22 @@ Visualize agora este novo código e tente entender a sua funcionalidade. Mais um
         const bodyPage = document.body;
         bodyPage.style.backgroundColor = 'red';
       }
+
+      const divBlue = document.querySelector('#blue');
+      divBlue.addEventListener('click', changeColorToBlue);
+
+      const divRed = document.querySelector('#red');
+      divRed.addEventListener('mouseover', changeColorToRed);
     </script>
   </body>
 </html>
+
 ``` 
 Como pode notar, cada função muda a cor de fundo da página para uma determinada cor. Essas funções são chamadas de acordo com o evento que é passado no escutador de eventos, 'click' para mudar o fundo da página para cor azul ao clicar na div de fundo azul e 'mouseover' para mudar para vermelho. Agora, crie uma nova função changeColorToGreen e depois atribua a div verde, já criada, um evento de duplo clique que chame a função.
+### Parte 3 -  Entendendo 'event.target'
+Veja o vídeo abaixo, nele terá exemplo prático do uso do addEventListener e uma propriedade chamada target.
+[![Eventos em JavaScript](http://img.youtube.com/vi/MwR6IBrUdDA/0.jpg)](https://www.youtube.com/watch?v=MwR6IBrUdDA "Event JavaScript")
+
 
 ## Vamos fazer juntos!
 Agora que você já conhece sobre os eventos do JavaScript, que tal fazermos um encontro ao vivo pelo Zoom para colocarmos juntos a mão na massa?
@@ -266,50 +273,7 @@ Para realizar os exercicíos do 1 ao 5, você utilizará o código abaixo.
       </div>
     </div>
     <script>
-      window.onload = function() {
-        alert('Crie sua ficha cadastral');
-      }
-      const formResponse = document.querySelector('.form-response');
-      function submitForm() {
-        const name = document.querySelector('#name').value;
-        const email = document.querySelector('#email').value;
-        const adress = document.querySelector('#adress').value;
-        const city = document.querySelector('#city').value;
-        formResponse.innerHTML =
-          `<br>Nome: ${name} <br> Email: ${email} <br> Endereço: ${adress} <br> Cidade: ${city}`;
-      }
-      function changeColor() {
-        const colorSelection = event.target.style.backgroundColor;
-        formResponse.style.color = colorSelection;
-      }
-      function changeSize() {
-        const sizeSelection = event.target;
-        formResponse.style.fontSize = sizeSelection.innerHTML;
-      }
-      function resetForm() {
-        formResponse.innerHTML = "";
-      }
-      const buttonSubmit = document.querySelector('#submit');
-      buttonSubmit.addEventListener('click', submitForm);
-
-      const buttonReset = document.querySelector('#reset');
-      buttonReset.addEventListener('click', resetForm);
-
-      const boxBlue = document.querySelector('#blue');
-      boxBlue.addEventListener('mouseover', changeColor);
-      const boxRed = document.querySelector('#red');
-      boxRed.addEventListener('mouseover', changeColor);
-      const boxGreen = document.querySelector('#green');
-      boxGreen.addEventListener('mouseover', changeColor);
-
-      const sizeSmall = document.querySelector('#size-20');
-      sizeSmall.addEventListener('dblclick', changeSize);
-      const sizeMedium = document.querySelector('#size-24');
-      sizeMedium.addEventListener('dblclick', changeSize);
-      const sizeBig= document.querySelector('#size-28');
-      sizeBig.addEventListener('dblclick', changeSize);
-
-
+    // seu código aqui !
     </script>
   </body>
 </html>
@@ -332,6 +296,101 @@ Cidade: 'cidade digitada'
 4. Na página, existem 3 divs cada uma de uma cor. Ao passar o mouse por cima da div, faça com que o texto inserido na ficha cadastral fique com a cor correspondente a div que o mouse está em cima.
 
 5. Assim como no exercício 4, faça com que o texto mude de acordo com a div. Desta vez, adicione um evento de duplo clique a cada div com o tamanho de texto específico. Exemplo: Ao clicar duas vezes em '28px', o texto ficará com um tamanho de fonte de 28 píxels.
+
+### Exercício Bônus : Jogo da velha
+Para realizar o exercicío bônus, você utilizará o código abaixo.
+``` html
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jogo da Velha</title>
+    <style>
+      body {
+        margin: auto;
+        width: 450px;
+      }
+
+      .box {
+        align-items: center;
+        border: solid 1px black;
+        display: flex;
+        justify-content: center;
+        height: 150px;
+        width: 150px;
+      }
+
+      .line {
+        display: flex;
+        flex-direction: row;
+        width: 450px;
+      }
+
+      .circle {
+        border: solid 10px blue;
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+      }
+
+      .cross {
+        color: red;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 180px;
+        padding-bottom: 30px;
+      }
+
+      button {
+        margin: 15px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game">
+      <div class="line">
+        <div class="box" style="border-left-width: 0;
+          border-top-width: 0;"></div>
+        <div class="box" style="border-top-width: 0;"></div>
+        <div class="box" style="border-right-width: 0;
+          border-top-width: 0;"></div>
+      </div>
+      <div class="line">
+        <div class="box" style="border-left-width: 0;"></div>
+        <div class="box"></div>
+        <div class="box" style="border-right-width: 0;"></div>
+      </div>
+      <div class="line">
+        <div class="box" style="border-left-width: 0;
+          border-bottom-width: 0;"></div>
+        <div class="box" style="border-bottom-width: 0;"></div>
+        <div class="box" style="border-right-width: 0;
+          border-bottom-width: 0;"></div>
+      </div>
+    </div>
+    <div class="line">
+      Escolha como começar:
+      <button id="circle">Círculo</button>
+      <button id="cross">X (Xis)</button>
+    </div>
+    <script>
+    // seu código aqui!
+    </script>
+  </body>
+</html>
+```
+O objetivo do exercício é criar um jogo da velha. Cada quadrado do jogo da velha é uma div de classe 'box'. Ao clicar em um quadrado, será marcado um x ou um círculo dentro da div, de acordo com o último clique. 
+Crie o script do seu código dentro da tag <script> de acordo com os enunciados abaixo:
+1. Adicione um evento JavaScript que chame uma função 'markFunction' ao clicar em qualquer uma div 'box'. *Dica: as divs estão todas dentro de uma div pai de classe 'game'.*
+2. Faça uma função chamada 'markFunction' que cria um elemento div e o insere dentro da div 'box' correspondente ao clique.
+
+Para realizar os números 3 e 4 do exercício, leia o texto abaixo:
+Existem duas classes previamente criadas com o nome de 'circle' e 'cross'. A classe 'circle' se for adicionada a uma div fará um estilo de círculo em suas bordas.  A classe 'cross' estilizará um X. 
+**Preste atenção pois na div com a classe 'cross' será necessário ter um 'x' minúsculo dentro dela. Já na div com a classe 'circle' não é necessário nada dentro da mesma, o círculo será formado automaticamente com a atribuição da classe**. 
+
+3. Dentro da função 'markFunction' mude a classe do elemento div criado para 'circle', caso o último clique tenho sido um 'x'. Ou para 'cross', caso o último elemento formado tenha sido um círculo. Por padrão, comece o jogo com um círculo. Não esqueça que a div que receber a classe 'cross' precisa ter um 'x' **minúsculo** dentro dela.
+4. Crie dois eventos para os botões de escolha inicial e uma função que modifica o padrão de início do jogo para 'circulo' ou 'x'. **Importante: uma vez já clicada a opção inicial, caso haja uma tentativa de outro clique, emita um alerta "Você já escolheu"**.
+
 
 ## Recursos adicionais (opcional)
 E aí, gostou do que aprendeu até aqui? Nesta parte, nós colocamos outras referências para você se aprofundar sobre o tema. Artigos, tutoriais, livros etc.

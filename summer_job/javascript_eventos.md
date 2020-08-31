@@ -2,7 +2,7 @@
 ## O que vamos aprender?
 Você já aprendeu, neste bloco, a trabalhar com os elementos da sua página, como selecioná-los e manipular o Dom de forma a ligar o HTML com o JavaScript. Agora, irá aprender como interagir com o usuário através dos eventos na sua página.
 
-Eventos são ações que podem ocorrer dentro da nossa página web quando o navegador faz uma determinada interação. Pode-se citar como exemplo, clicar com o mouse em algum elemento como imagem, texto, botão ou até mesmo em uma div. Eventos podem também estar relacionados com o carregamento da página ou o fechamento dela, você verá as interações mais utilizadas e como fazer para que funções sejam executadas na ocorrência deste evento.
+Eventos são ações que podem ocorrer dentro da nossa página web quando o navegador faz uma determinada interação. Pode-se citar como exemplo, clicar com o mouse em algum elemento como imagem, texto, botão ou até mesmo em uma div. Eventos podem também estar relacionados com o carregamento da página ou o fechamento dela, você verá as interações mais utilizadas e como fazer para que funções sejam executadas na ocorrência de eventos.
 
 ### Você será capaz de:
 * Adicionar uma ação à página que pode modificar elementos como cor, tamanho entre outros estilos;
@@ -19,7 +19,7 @@ Depois de saber a importância de um evento para uma aplicação web, é necess�
 * Um único elemento, como um *botão*;
 * Um conjunto de elementos, como um *menu de navegação* ou elementos dentro de uma *div*;
 * A própria *janela* ao ser carregada.
-* Entre muitos outros elementos como caixa de inputs de um formulário.
+* Entre muitos outros elementos, como caixa de inputs de um formulário.
 
 #### Criando um evento
 Imagine que ao carregar uma página por completo seja necessário emitir um alerta ao usuário: *"Página carregada por completo"*. Em JavaScript, o objeto window representa a janela do navegador e onload representa o carregamento da página. Veja abaixo como é possível emitir a mensagem de alerta:
@@ -39,10 +39,10 @@ Imagine que ao carregar uma página por completo seja necessário emitir um aler
 </html>
 
 ```
-Copie e cole esse código no vs code e salve como uma página *.html* ao carregar a página será exibido uma mensagem de alerta ao usuário.
+Copie e cole esse código no vs code e salve como uma página *.html*. Ao carregar a página, será exibido uma mensagem de alerta ao usuário.
 
-Assim como onload é um evento que ocorre na janela, existem outros tipos de eventos, que podem ocorrer em um determinado elemento na página, como: **click, change e mouseOver**.
-Agora, perceba como a interatividade acontece em um evento **click** no elemento botão, observe as seguintes etapas:
+Assim como onload é um evento que ocorre na janela, existem outros tipos de eventos, que podem ocorrer em um determinado elemento na página, alguns deles são: **click, change e mouseOver**.
+Agora, perceba como a interatividade acontece em um evento **click** no botão, observe as seguintes etapas:
 ![Evento JS](https://i.ibb.co/DMVPVP2/image-summer-job.jpg)
 
 1. O botão é **clicado**.
@@ -52,7 +52,7 @@ Agora, perceba como a interatividade acontece em um evento **click** no elemento
 
 
 ### Parte 2 - Escutador de Eventos (addEventListener)
-Após o evento disparar, é necessário que um código específico no JavaScript esteja pronto para escutar este disparo e realizar a devida modificação na página.  A função responsável por escutar o evento é a **addEventListener()**, ela ficará o tempo todo vigilante esperando o evento ocorrer no elemento. Este código sempre é atrelado a um elemento, neste caso, o botão que irá ser clicado. Veja abaixo sua utilização:
+Após o evento disparar, é necessário que um código específico no JavaScript esteja pronto para escutar este disparo e realizar a devida modificação na página.  A função responsável por escutar o evento é a **addEventListener()**, ela ficará o tempo todo vigilante esperando o evento ocorrer no elemento. Este código sempre é atrelado a pelo menos um elemento, neste caso, o próprio botão que irá ser clicado. Veja abaixo sua utilização:
 ```JavaScript
 button.addEventListener('click', function() {
     // sua função aqui
@@ -110,7 +110,7 @@ Copie o código abaixo, cole no VS Code e salve como .html. Após salvar, visual
         const box = document.querySelector('.textBox');
         box.innerHTML = text.value;
       }
-      text.addEventListener('keyup', writeText);
+      text.addEventListener('change', writeText);
     </script>
   </body>
 </html>
@@ -118,7 +118,7 @@ Copie o código abaixo, cole no VS Code e salve como .html. Após salvar, visual
 ```
 Dentro da tag <script>, é possível entender que o elemento com o id "text" é selecionado e a ele adicionado um addEventListener. O evento utilizado é o evento 'change', esse evento ocorre quando um elemento de um formulário é modificado. Observe que para o texto aparecer na caixa embaixo, é necessário que se clique fora da caixa de texto após a sua digitação. Isso ocorre pois o evento 'change' acontece com a mudança de estado desse elemento. Para entender melhor, substitua o evento 'change' por 'keyup'. Percebeu a diferença?
 
-**Como segundo parâmetro do addEventListener é necessário passar uma função**, neste caso, é a função writeText criada. Nessa função, é selecionada a div de classe "textBox" e através do innerHTML é inserido o texto digitado na caixa de texto dentro da div.
+**Como segundo parâmetro do addEventListener é necessário passar uma função**, neste caso, é a função writeText criada. Nessa função, é selecionada a div de classe "textBox" e inserido o texto da caixa de texto dentro da "textBox".
 
 Visualize agora este novo código e tente entender a sua funcionalidade. Mais uma vez, se concentre na parte em HTML e JavaScript. O CSS da tag <style> está apenas auxiliando para que a visualização no navegador seja mais agradável. Preste atenção na estilização com CSS inline colocada dentro da tag div, sua funcionalidade é colorir cada quadrado. Copie, cole todo o código abaixo no VS Code e abra no seu navegador. 
 ```html
@@ -171,9 +171,9 @@ Visualize agora este novo código e tente entender a sua funcionalidade. Mais um
 </html>
 
 ``` 
-Como pode notar, cada função muda a cor de fundo da página para uma determinada cor. Essas funções são chamadas de acordo com o evento que é passado no escutador de eventos, 'click' para mudar o fundo da página para cor azul ao clicar na div de fundo azul e 'mouseover' para mudar para vermelho ao passar o mouse em cima da div vermelha. Agora, crie uma nova função changeColorToGreen e depois atribua à div verde, já criada, um evento de duplo clique que chame a função.
+Como pode notar, cada função muda a cor de fundo da página para uma determinada cor. Essas funções são chamadas de acordo com o evento que é passado no escutador de eventos. O evento 'click' chama a função que muda o fundo da página para cor azul ao clicar na div de fundo azul. O evento 'mouseover' chama a função que muda para vermelho ao passar o mouse em cima da div vermelha. Agora, crie uma nova função 'changeColorToGreen' e depois atribua à div verde um evento de duplo clique que chame esta função.
 ### Parte 3 -  Entendendo 'event.target'
-Veja o vídeo abaixo, nele terá exemplo prático do uso do addEventListener e uma propriedade chamada target.
+Veja o vídeo abaixo. Nele, terá um exemplo prático do uso do addEventListener e uma propriedade para eventos chamada target.
 [![Eventos em JavaScript](http://img.youtube.com/vi/MwR6IBrUdDA/0.jpg)](https://www.youtube.com/watch?v=MwR6IBrUdDA "Event JavaScript")
 
 
@@ -281,7 +281,7 @@ Para realizar os exercicíos do 1 ao 5, você utilizará o código abaixo.
 ``` 
 Leia atentamente os enunciados. Dentro da tag <script>, faça o que se pede! 
 
-1. Crie uma função que alerte assim que a página for toda carregada, utilizando 'onload' aprendido nesta aula. No alerta, apareça a seguinte mensagem: "Crie sua ficha cadastral".
+1. Crie uma função que alerte assim que a página for toda carregada, utilizando 'onload' aprendido nesta aula. No alerta, faça aparecer a seguinte mensagem: "Crie sua ficha cadastral".
 
 2. Ao clicar no botão 'Criar Ficha', pegue os valores digitados no formulário acima do botão e passe eles para a ficha cadastral abaixo, neste formato:
 Ficha Cadastral
@@ -294,9 +294,9 @@ Cidade: 'cidade digitada'
 3. Ao clicar no botão 'Limpar', apague todos os valores da Ficha Cadastral abaixo, deixando limpa a ficha do cliente. 
 **Dica: Você pode substituir o que está dentro da div por um valor vazio ("")**
 
-4. Na página, existem 3 divs cada uma de uma cor. Ao passar o mouse por cima da div, faça com que o texto inserido na ficha cadastral fique com a cor correspondente a div que o mouse está em cima.
+4. Na página, existem 3 divs cada uma de uma cor. **Ao passar o mouse** por cima da div, faça com que o texto inserido na ficha cadastral fique com a cor correspondente a div que o mouse está em cima.
 
-5. Assim como no exercício 4, faça com que o texto mude de acordo com a div. Desta vez, adicione um evento de duplo clique a cada div com o tamanho de texto específico. Exemplo: Ao clicar duas vezes em '28px', o texto ficará com um tamanho de fonte de 28 píxels.
+5. Assim como no exercício 4, faça com que o texto mude de acordo com a div. Desta vez, adicione um evento de **duplo clique** a cada uma e mude o tamanho de texto para o específico. Exemplo: Ao clicar duas vezes em '28px', o texto ficará com um tamanho de fonte de 28 píxels.
 
 ### Exercício Bônus : Jogo da velha
 Para realizar o exercicío bônus, você utilizará o código abaixo.
